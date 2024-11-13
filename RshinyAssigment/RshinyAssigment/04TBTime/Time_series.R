@@ -23,7 +23,7 @@ ui <- fluidPage(
 
 server <- function(input, output) {
   output$timeSeriesPlot <- renderPlot({
-    country_data <- subset(tb_data, Country == input$Country)  # Fix here
+    country_data <- subset(tb_data, Country == input$Country)
     ggplot(country_data, aes(x = Year, y = Estimated_TB_population)) +
       geom_line(color = "blue") +
       labs(
